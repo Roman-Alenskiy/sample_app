@@ -131,13 +131,17 @@ aside {
 }
 
 .gravatar {
-    float: left;
-    margin-left: 10px;
+    // float: left;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 .gravatar_edit {
-    margin-top: 15px;
+    margin: 15px 0;
+    display: inline-block;
+    a {
+        margin-top: 3.3em;
+    }
 }
 
 /* forms */
