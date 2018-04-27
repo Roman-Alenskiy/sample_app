@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   resources :users
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
-  # patch '/account_edit', to: 'users#update'
 # Sessions
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+# Activations
+  resources :account_activations, only: [:edit]
 end
