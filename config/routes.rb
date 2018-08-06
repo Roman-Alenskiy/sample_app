@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :users
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 # Sessions
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -18,4 +23,6 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
 # Microposts
   resources :microposts, only: [:create, :destroy]
+# Followers & following
+  resources :relationships, only: [:create, :destroy]
 end
